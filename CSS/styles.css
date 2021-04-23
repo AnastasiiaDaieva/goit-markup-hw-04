@@ -19,6 +19,8 @@ html {
   --alt-backgr: #f5f4fa;
   --border-color: #ECECEC;
   --card-border: #eeeeee;
+  --bord-icon: #AFB1B8;
+  --footer-icon-bg: #ffffff1a;
   --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -98,11 +100,12 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   border-bottom: 1px solid;
-  border-block-color: var(--border-color);
+  border-color: var(--border-color);
 }
 
 .header .container {
   display: flex;
+  align-items: center;
 }
 
 .header .header-logo {
@@ -139,8 +142,7 @@ margin-right: 50px;
 }
 
 .nav-link,
-.nav-link-current,
-.header-link {
+.nav-link-current {
   padding-top: 32px;
   padding-bottom: 32px;
   text-decoration: none;
@@ -203,13 +205,38 @@ margin-right: 50px;
   color: var(--bl-cl);
 }
 
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+ fill: var(--main-text-cl);
+
+}
+.header-link {
+display: flex;
+align-items: center;
+}
+
+
+.header-link:hover .header-icon,
+.header-link:focus .header-icon {
+ fill: var(--accent-cl);
+}
+
 /* footer settings */
 
 .footer {
-  max-width: 1600px;
+  display: flex;
+  align-items: center;
   background-color: var(--backgr-dark);
   color: var(--wh-cl);
   padding: 60px 0;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  
 }
 
 .footer .footer-logo {
@@ -221,6 +248,7 @@ margin-right: 50px;
 }
 
 .footer-link {
+  display: block;
   text-decoration: none;
   color: var(--wh-cl);
 }
@@ -250,6 +278,49 @@ margin-right: 50px;
 }
 
 
+.sm-link-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--wh-cl);
+  background-color: var(--footer-icon-bg);
+}
+
+.sm-link-footer:hover,
+.sm-link-footer:focus {
+  background-color: var(--accent-cl);
+  fill: var(--wh-cl);
+}
+
+.sm-icons-footer {
+ display: flex;
+}
+
+.address {
+  align-self: center;
+  margin-right: 70px;
+}
+
+.join {
+  display: flex;
+  flex-wrap: wrap;
+  width: 206px;
+  height: 80px;
+}
+
+.join-text {
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: var(--wh-cl);
+margin-bottom: 20px;
+}
+
 
 /* body settings*/
 
@@ -268,11 +339,22 @@ margin-right: 50px;
 /* hero home page */
 
 .hero {
-  max-width: 1600px;
-  background-color: var(--backgr-dark);
   color: var(--wh-cl);
-  padding: 200px 15px;
   text-align: center;
+}
+
+.container-fluid {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 200px 15px;
+  background-color: var(--backgr-dark);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)),
+  url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  
 }
 
 .hero-heading {
@@ -296,6 +378,7 @@ margin-right: 50px;
   color: var(--wh-cl);
   border-radius: 4px;
   text-align: center;
+  border-color: transparent;
 }
 
 
@@ -307,7 +390,6 @@ margin-right: 50px;
 /* features section home page */
 
 .features {
-  max-width: 1600px;
   display: flex;
 }
 
@@ -329,10 +411,26 @@ margin-right: 50px;
   margin-bottom: 10px;
 }
 
+.features-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.feature-cont {
+  width: 270px;
+  height: 120px;
+  background-color: var(--alt-backgr);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+
 /* activity */
 
 .activity {
-  max-width: 1600px;
   padding-top: 0;
 }
 
@@ -349,7 +447,6 @@ margin-right: 50px;
 
 .team {
   background-color: var(--alt-backgr);
-  max-width: 1600px;
   display: flex;
 }
 
@@ -373,14 +470,18 @@ margin-right: 50px;
 }
 
 .card-cont {
-  padding-bottom: 30px;
   padding-top: 30px;
+  margin-bottom: 16px;
 }
 
 .team .member-card:not(:last-child) {
     margin-right: 30px;
 }
 
+.member-card {
+  padding-bottom: 30px;
+  
+}
 
 .member-name {
   font-weight: 500;
@@ -398,11 +499,115 @@ margin-right: 50px;
   color: var(--main-text-cl);
 }
 
+.social-cont {
+  padding-left: 32px;
+padding-right: 32px;
+}
+
+.sm-icon:not(:last-child) {
+  margin-right: 10px;
+
+}
+
+.social-media-icons {
+ display: inline-flex;
+ justify-content: center;
+ width: 206px;
+ height: 44px;
+}
+
+.sm-svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.sm-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--bord-icon);
+}
+
+
+.sm-link:hover,
+.sm-link:focus {
+  background-color: var(--accent-cl);
+}
+
+.sm-link:hover .sm-svg,
+.sm-link:focus .sm-svg{
+  color: var(--wh-cl);
+}
+
+
+/* regular clients section home page  */
+
+.clients-container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 184px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.clients {
+  display: flex;
+  justify-content: center;;
+  list-style: none;
+}
+
+.client:not(:last-child) {
+  margin-right: 30px;
+}
+
+.client {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--bord-icon);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16px 32px;
+}
+
+
+.client-svg { 
+  fill: currentColor;
+}
+
+
+.heading-clients {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: var(--add-cl);
+  margin-bottom: 50px;
+}
+
+.client-link {
+  display: flex;
+  width: 106px;
+  height: 60px;
+  color: var(--bord-icon);
+}
+
+.client:hover,
+.client:focus,
+.client-link:hover .client-svg,
+.client-link:focus .client-svg {
+  fill: var(--accent-cl);
+  border-color: var(--accent-cl);
+}
+
+
 /* portfolio page body*/
 
-.portfolio {
-  max-width: 1600px;
-}
 .portfolio-buttons {
   display: flex;
   justify-content: center;
@@ -425,6 +630,8 @@ margin-right: 50px;
 .portfolio-button:focus {
   background-color: var(--accent-cl);
   color: var(--wh-cl);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  border: none; 
 }
 
 .button-style:not(:last-child) {
@@ -468,6 +675,10 @@ margin-bottom: 4px;
   line-height: 1.87;
   color: var(--main-text-cl);
   font-weight: 400;
+}
+
+.card-link:hover .portfolio-card {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* check margins and paddings */
