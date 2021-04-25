@@ -21,7 +21,8 @@ html {
   --card-border: #eeeeee;
   --bord-icon: #afb1b8;
   --footer-icon-bg: #ffffff1a;
-  --card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --port-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 body {
@@ -189,6 +190,8 @@ img {
 /* hovers and accents */
 .nav-style .nav-link:hover,
 .nav-style .nav-link-current:hover,
+.nav-style .nav-link:focus,
+.nav-style .nav-link-current:focus,
 .header-link:hover,
 .header-link:focus,
 .logo-accent,
@@ -230,6 +233,12 @@ img {
 .footer .container {
   display: flex;
   align-items: center;
+}
+
+.footer-logo {
+  display: block;
+  text-decoration: none;
+  color: var(--wh-cl);
 }
 
 .footer .footer-logo {
@@ -452,7 +461,7 @@ img {
 .team .member-card {
   background-color: var(--wh-cl);
   border-radius: 0px 0px 4px 4px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--team-card-shadow);
 }
 
 .card-cont {
@@ -547,14 +556,14 @@ img {
   margin-right: 30px;
 }
 
-.client {
+/* .client {
   width: 170px;
   height: 92px;
   border: 1px solid var(--bord-icon);
   box-sizing: border-box;
   border-radius: 4px;
   padding: 16px 32px;
-}
+} */
 
 .client-svg {
   fill: currentColor;
@@ -571,20 +580,22 @@ img {
 
 .client-link {
   display: flex;
-  width: 106px;
-  height: 60px;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--bord-icon);
   color: var(--bord-icon);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16px 32px;
 }
 
-.client:hover,
-.client:focus,
 .client-link:hover .client-svg,
-.client-link:focus .client-svg,
-.client-link:hover,
-.client-link:focus,
-.client:hover .client-svg,
-.client:focus .client-svg {
+.client-link:focus .client-svg {
   fill: var(--accent-cl);
+}
+
+.client-link:hover,
+.client-link:focus {
   border-color: var(--accent-cl);
 }
 
@@ -673,5 +684,5 @@ img {
 
 .card-link:hover,
 .card-link:focus {
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--port-card-shadow);
 }
